@@ -1,16 +1,27 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { TextInput } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const Index = () => {
+  const [username, setusername] = useState("");
+  const navigation = useNavigation();
   const Login = () => {
     //your funciton here
+    navigation.navigate("Home", {
+      name: username,
+    });
   };
 
   return (
     <View style={styles.container}>
-      <TextInput style={styles.input} placeholder="username" />
-      <TextInput style={styles.input} placeholder="password" />
+      <TextInput
+        style={styles.input}
+        placeholder="username"
+        value={username}
+        onChangeText={setusername}
+      />
+      <TextInput style={styles.input} placeholder="password" secureTextEntry />
       <TouchableOpacity style={styles.button} onPress={Login}>
         <Text style={styles.text}>Sign In</Text>
       </TouchableOpacity>
