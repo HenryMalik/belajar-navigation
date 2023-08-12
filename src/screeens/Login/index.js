@@ -15,16 +15,22 @@ const Index = () => {
 
   return (
     <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        placeholder="username"
-        value={username}
-        onChangeText={setusername}
-      />
-      <TextInput style={styles.input} placeholder="password" secureTextEntry />
-      <TouchableOpacity style={styles.button} onPress={Login}>
-        <Text style={styles.text}>Sign In</Text>
-      </TouchableOpacity>
+      <View style={styles.login}>
+        <TextInput
+          style={styles.input}
+          placeholder="username"
+          value={username}
+          onChangeText={setusername}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="password"
+          secureTextEntry
+        />
+        <TouchableOpacity style={styles.button} onPress={Login}>
+          <Text style={styles.text}>Sign In</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -34,6 +40,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#C7E3F0",
   },
   input: {
     borderWidth: 1,
@@ -45,6 +52,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     width: 150,
     textAlign: "center",
+    backgroundColor: "white",
   },
   button: {
     backgroundColor: "black",
@@ -57,6 +65,16 @@ const styles = StyleSheet.create({
   text: {
     color: "white",
     fontSize: 20,
+  },
+  login: {
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "white",
+    width: "72%",
+    height: "25%",
+    borderWidth: 2,
+    borderColor: "skyblue",
+    borderRadius: 15,
   },
 });
 
