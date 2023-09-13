@@ -13,6 +13,9 @@ import Logo from "../../assets/icon.jpeg";
 const Index = () => {
   const { params } = useRoute();
   const nav = useNavigation();
+  const Next = () => {
+    nav.navigate("Page");
+  };
   return (
     <View>
       <View style={styles.header_container}>
@@ -45,23 +48,16 @@ const Index = () => {
         </View>
 
         <Text style={styles.content_text}>
-          {`
-        Lorem ipsum dolor sit amet consectetur. Lacus quis eleifend a porttitor id arcu curabitur nisi. Quis in ut facilisi neque arcu nullam neque. Aenean commodo sit viverra dui ipsum faucibus id. Faucibus pellentesque tincidunt dis sagittis aliquam faucibus. Mattis diam urna id adipiscing proin commodo 
-
-        montes. Donec in id quam id semper enim. Urna maecenas fringilla id luctus morbi sit aliquam. Lorem arcu eu ultrices ullamcorper tortor arcu id. Neque dui enim amet dictum ligula non id dolor viverra. Nisl viverra commodo auctor neque ac ut odio 
-        
-        ullamcorper. Pretium vel adipiscing non amet pharetra cursus consequat mauris sit. Turpis commodo egestas lorem placerat eget sed convallis malesuada tortor. Natoque risus diam nulla aliquet mauris sed scelerisque. Leo fringilla posuere non risus volutpat
-        
-        Lorem ipsum dolor sit amet consectetur. Lacus quis eleifend a porttitor id arcu curabitur nisi. Quis in ut facilisi neque arcu nullam neque. Aenean commodo sit viverra dui ipsum faucibus id. Faucibus pellentesque tincidunt dis sagittis aliquam faucibus. Mattis diam urna id adipiscing proin commodo 
-
-        montes. Donec in id quam id semper enim. Urna maecenas fringilla id luctus morbi sit aliquam. Lorem arcu eu ultrices ullamcorper tortor arcu id. Neque dui enim amet dictum ligula non id dolor viverra. Nisl viverra commodo auctor neque ac ut odio 
-        
-        ullamcorper. Pretium vel adipiscing non amet pharetra cursus consequat mauris sit. Turpis commodo egestas lorem placerat eget sed convallis malesuada tortor. Natoque risus diam nulla aliquet mauris sed scelerisque. Leo fringilla posuere non risus volutpat
-        
-        `}
+          { }
         </Text>
+        <View >
+          <TouchableOpacity style={styles.button}>
+            <Text>Lorem ipsum</Text>
+            <Icon size={25} name="arrow-right" />
+          </TouchableOpacity>
+        </View>
       </ScrollView>
-    </View>
+    </View >
   );
 };
 
@@ -112,4 +108,14 @@ const styles = StyleSheet.create({
     padding: 16,
     marginBottom: 50,
   },
+  button: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContentContent: "center",
+    width: "25%",
+    height: "50%",
+    backgroundColor: "gray",
+    borderTopWidth: 2,
+    borderColor: "#eaeaeaaa"
+  }
 });
